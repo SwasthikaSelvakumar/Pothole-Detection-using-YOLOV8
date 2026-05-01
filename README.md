@@ -1,46 +1,157 @@
-# Pothole Detection Using YOLOv8
+# 🚧 Pothole Detection — YOLOv8 + LLM Agentic Alerts
 
-## Project Overview
-This project develops a deep learning model to detect potholes in urban road images, leveraging the YOLOv8 architecture. Aimed at enhancing urban infrastructure through timely and efficient road maintenance, this solution offers real-time detection capabilities with high accuracy.
+> **SDG 3 — Good Health & Well-Being** | **SDG 11 — Sustainable Cities**  
+> Real-time road defect detection with AI-powered safety alerts
 
-## Key Features
-- Real-time pothole detection with YOLOv8.
-- High precision and recall, demonstrating effective identification of potholes in diverse road conditions.
-- Suitable for integration into urban maintenance workflows to facilitate road repairs.
+---
 
-## Results Summary
-### Validation Performance
-- Precision: 71.4%
-- Recall: 69.4%
-- mAP@0.5: 72.1%
-- mAP@0.5:0.95: 40.7%
-- Inference Speed: 22.1ms per image, enabling fast processing suitable for real-time applications.
+## 📌 Overview
 
-### Test Dataset Performance
-- Demonstrated robust detection across 67 test images, with effective identification of varying numbers of potholes.
-- Average Inference Speed: ~20.0ms per image, showcasing the model's efficiency in processing images quickly.
+This project detects road defects (potholes, manholes, cracks) using **YOLOv8**
+and enhances it with a **Groq LLM agentic loop** that automatically:
+- Generates natural language road safety explanations
+- Assigns a severity score (1–10)
+- Recommends corrective actions
+- Fires alerts when risk is HIGH or CRITICAL
 
-## Model Configuration
-- Architecture: YOLOv8 medium variant (YOLOv8m)
-- Training Parameters: Trained for 70 epochs with a batch size of 16 and image size of 640.
-- Optimizer: SGD with a learning rate of 0.01, momentum of 0.937, and weight decay of 0.0005.
+---
 
-## Dataset
-The model was trained and validated on a custom dataset comprising over 1,300 images, specifically curated for pothole detection, ensuring high model accuracy and reliability.
+## 🏗️ Architecture
 
-## Technologies Used
-- **Programming Language:** Python
-- **Frameworks/Libraries:** PyTorch, Ultralytics YOLOv8, OpenCV
+```
+Road Image → YOLOv8 Detection → Detections List
+                                      ↓
+                              Groq LLM (LLaMA 3)
+                                      ↓
+                    Explanation + Severity + Action
+                                      ↓
+                         Agentic Alert Loop
+                    (Log / Webhook if HIGH/CRITICAL)
+                                      ↓
+                              JSON Response
+```
 
-## Getting Started
-Instructions on setting up the project environment, including prerequisites and installation steps, are provided to help you replicate the model training or to use the model for detecting potholes in new images.
+---
 
-## Usage
-Detailed guidelines on how to use the trained model for pothole detection in images or video streams are included, ensuring you can easily integrate this solution into your projects or applications.
+## 🚀 Quick Start
 
-## Contributing
-Contributions are welcome! If you have suggestions for improving the model or extending its applications, please follow the standard pull request process.
+### Option 1 — Run Directly with Python
 
-## Acknowledgments
-- Dataset provided by Roboflow.
-- Model architecture and training supported by Ultralytics.
+```bash
+git clone https://github.com/venkatavamsi01/Pothole-Detection-using-YOLOV8.git
+cd Pothole-Detection-using-YOLOV8
+
+pip install -r requirements.txt
+
+export GROQ_API_KEY=your_groq_key_here
+python app.py
+```
+
+### Option 2 — Run with Docker
+
+```bash
+export GROQ_API_KEY=your_groq_key_here
+./build_and_run.sh all
+```
+
+---
+
+## 🔌 API Endpoints
+
+| Method | Endpoint     | Description                        |
+|--------|--------------|------------------------------------|
+| GET    | `/health`    | Health check + model info          |
+| GET    | `/classes`   | List detection classes + risk map  |
+| POST   | `/predict`   | Detect defects + LLM analysis      |
+
+### Example Request
+
+```bash
+curl -X POST http://localhost:5000/predict \
+     -F "image=@road_sample.jpg"
+```
+
+### Example Response
+
+```json
+{
+  "image": "road_sample.jpg",
+  "total_defects_found": 2,
+  "detections": [
+    {
+      "class": "pothole",
+      "confidence": 0.87,
+      "risk": "HIGH",
+      "size": "LARGE",
+      "bbox": [120, 340, 280, 480]
+    }
+  ],
+  "llm_analysis": {
+    "explanation": "A large pothole detected at road center poses high risk for two-wheelers.",
+    "severity_score": 8,
+    "corrective_action": "Notify municipal authority for urgent repair within 24 hours.",
+    "alert_priority": "HIGH"
+  },
+  "alert": {
+    "alert_fired": true,
+    "priority": "HIGH"
+  },
+  "sdg": "SDG 3 & SDG 11 — Road Safety & Sustainable Cities"
+}
+```
+
+---
+
+## 🐳 Docker
+
+```bash
+# Pull from DockerHub
+docker pull venkatavamsi01/pothole-detector:latest
+
+# Run
+docker run -p 5000:5000 \
+  -e GROQ_API_KEY=your_key \
+  venkatavamsi01/pothole-detector:latest
+```
+
+🔗 DockerHub: https://hub.docker.com/r/venkatavamsi01/pothole-detector
+
+---
+
+## 📁 Project Structure
+
+```
+├── app.py               # Flask API + YOLOv8 + Groq LLM agentic loop
+├── Dockerfile           # Container definition
+├── build_and_run.sh     # Shell script: build / run / push / tag
+├── requirements.txt     # Python dependencies
+├── best.pt              # YOLOv8 trained weights (download separately)
+└── README.md
+```
+
+---
+
+## 🌍 SDG Alignment
+
+| SDG | Goal | How This Project Contributes |
+|-----|------|------------------------------|
+| SDG 3 | Good Health & Well-Being | Prevents road accidents caused by potholes |
+| SDG 11 | Sustainable Cities | Enables smart city road monitoring systems |
+
+---
+
+## 🔑 Environment Variables
+
+| Variable         | Required | Description                    |
+|------------------|----------|--------------------------------|
+| `GROQ_API_KEY`   | Yes      | Groq API key for LLM analysis  |
+| `MODEL_PATH`     | No       | Path to YOLOv8 weights (default: `best.pt`) |
+| `CONF_THRESHOLD` | No       | Detection confidence (default: `0.40`) |
+| `ALERT_WEBHOOK`  | No       | URL to fire HIGH-risk alerts   |
+
+---
+
+## 📜 License
+
+MIT License — Original model by [HussainM899](https://github.com/HussainM899/Pothole-Detection-using-YOLOV8).
+LLM integration and deployment by venkatavamsi01.
