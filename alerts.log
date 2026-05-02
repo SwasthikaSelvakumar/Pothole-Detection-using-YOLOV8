@@ -1,0 +1,188 @@
+2026-05-01 15:42:10,689 [INFO] Starting Pothole Detection API on port 5000 …
+2026-05-01 15:42:10,736 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.16.18.140:5000
+2026-05-01 15:42:10,736 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-01 15:42:23,701 [INFO] 127.0.0.1 - - [01/May/2026 15:42:23] "[33mGET / HTTP/1.1[0m" 404 -
+2026-05-01 15:42:24,023 [INFO] 127.0.0.1 - - [01/May/2026 15:42:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-01 15:43:03,607 [INFO] Starting Pothole Detection API on port 5000 …
+2026-05-01 15:43:03,630 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.16.18.140:5000
+2026-05-01 15:43:03,631 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-01 15:44:47,482 [INFO] 127.0.0.1 - - [01/May/2026 15:44:47] "GET /health HTTP/1.1" 200 -
+2026-05-01 15:47:05,045 [INFO] 127.0.0.1 - - [01/May/2026 15:47:05] "GET /health HTTP/1.1" 200 -
+2026-05-01 15:47:05,106 [INFO] 127.0.0.1 - - [01/May/2026 15:47:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-01 15:47:19,909 [INFO] 127.0.0.1 - - [01/May/2026 15:47:19] "GET /classes HTTP/1.1" 200 -
+2026-05-01 15:50:54,157 [INFO] Loading YOLOv8 model from best.pt …
+2026-05-01 15:50:54,995 [ERROR] Exception on /predict [POST]
+Traceback (most recent call last):
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\Santhosh Kumar\Pothole-Detection-using-YOLOV8\app.py", line 227, in predict
+    clf = load_model()
+  File "C:\Users\Santhosh Kumar\Pothole-Detection-using-YOLOV8\app.py", line 80, in load_model
+    model = YOLO(MODEL_PATH)
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\ultralytics\yolo\engine\model.py", line 55, in __init__
+    {'.pt': self._load, '.yaml': self._new}[Path(model).suffix](model)
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\ultralytics\yolo\engine\model.py", line 83, in _load
+    self.model, self.ckpt = attempt_load_one_weight(weights)
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\ultralytics\nn\tasks.py", line 341, in attempt_load_one_weight
+    ckpt = torch.load(attempt_download(weight), map_location='cpu')  # load
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\serialization.py", line 1479, in load
+    with _open_file_like(f, "rb") as opened_file:
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\serialization.py", line 759, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\serialization.py", line 740, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: 'best.pt'
+2026-05-01 15:50:55,004 [INFO] 127.0.0.1 - - [01/May/2026 15:50:55] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2026-05-01 15:54:48,661 [INFO] Starting Pothole Detection API on port 5000 …
+2026-05-01 15:54:48,696 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.16.18.140:5000
+2026-05-01 15:54:48,698 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-01 15:55:07,630 [INFO] 127.0.0.1 - - [01/May/2026 15:55:07] "[33mGET / HTTP/1.1[0m" 404 -
+2026-05-01 15:55:25,937 [INFO] Loading YOLOv8 model from best.pt …
+2026-05-01 15:55:26,572 [ERROR] Exception on /predict [POST]
+Traceback (most recent call last):
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\Santhosh Kumar\Pothole-Detection-using-YOLOV8\app.py", line 227, in predict
+    clf = load_model()
+  File "C:\Users\Santhosh Kumar\Pothole-Detection-using-YOLOV8\app.py", line 80, in load_model
+    model = YOLO(MODEL_PATH)
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\ultralytics\yolo\engine\model.py", line 55, in __init__
+    {'.pt': self._load, '.yaml': self._new}[Path(model).suffix](model)
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\ultralytics\yolo\engine\model.py", line 83, in _load
+    self.model, self.ckpt = attempt_load_one_weight(weights)
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\ultralytics\nn\tasks.py", line 341, in attempt_load_one_weight
+    ckpt = torch.load(attempt_download(weight), map_location='cpu')  # load
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\serialization.py", line 1479, in load
+    with _open_file_like(f, "rb") as opened_file:
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\serialization.py", line 759, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "C:\Users\Santhosh Kumar\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\serialization.py", line 740, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: 'best.pt'
+2026-05-01 15:55:26,576 [INFO] 127.0.0.1 - - [01/May/2026 15:55:26] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2026-05-01 16:05:13,390 [INFO] Starting Pothole Detection API on port 5000 …
+2026-05-01 16:05:13,420 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.16.18.140:5000
+2026-05-01 16:05:13,420 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-01 16:05:24,024 [INFO] Loading YOLOv8 model from best.pt …
+2026-05-01 16:05:24,158 [INFO] YOLOv8 model loaded.
+2026-05-01 16:05:24,846 [WARNING] LLM call failed: 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-01 16:05:25,014 [INFO] Processed: pothole.jpg | Defects: 1 | Priority: MEDIUM | Alert: False
+2026-05-01 16:05:25,016 [INFO] 127.0.0.1 - - [01/May/2026 16:05:25] "POST /predict HTTP/1.1" 200 -
+2026-05-01 16:36:24,171 [INFO] Starting RoadSense AI on port 5000 …
+2026-05-01 16:36:24,211 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.16.18.140:5000
+2026-05-01 16:36:24,212 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-01 16:36:38,816 [INFO] 127.0.0.1 - - [01/May/2026 16:36:38] "GET / HTTP/1.1" 200 -
+2026-05-01 16:36:39,193 [INFO] 127.0.0.1 - - [01/May/2026 16:36:39] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:36:39,506 [INFO] 127.0.0.1 - - [01/May/2026 16:36:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-01 16:36:53,524 [INFO] Loading YOLOv8 model from best.pt …
+2026-05-01 16:36:53,692 [INFO] YOLOv8 model loaded.
+2026-05-01 16:36:54,198 [INFO] 127.0.0.1 - - [01/May/2026 16:36:54] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:36:54,344 [WARNING] LLM call failed: 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-01 16:36:54,348 [INFO] Processed: pothole.png | Defects: 1 | Priority: MEDIUM | Alert: False
+2026-05-01 16:36:54,349 [INFO] 127.0.0.1 - - [01/May/2026 16:36:54] "POST /predict HTTP/1.1" 200 -
+2026-05-01 16:37:09,202 [INFO] 127.0.0.1 - - [01/May/2026 16:37:09] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:37:25,103 [INFO] 127.0.0.1 - - [01/May/2026 16:37:25] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:37:40,105 [INFO] 127.0.0.1 - - [01/May/2026 16:37:40] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:37:55,100 [INFO] 127.0.0.1 - - [01/May/2026 16:37:55] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:38:10,099 [INFO] 127.0.0.1 - - [01/May/2026 16:38:10] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:38:25,106 [INFO] 127.0.0.1 - - [01/May/2026 16:38:25] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:39:26,099 [INFO] 127.0.0.1 - - [01/May/2026 16:39:26] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:40:27,104 [INFO] 127.0.0.1 - - [01/May/2026 16:40:27] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:41:28,109 [INFO] 127.0.0.1 - - [01/May/2026 16:41:28] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:42:29,107 [INFO] 127.0.0.1 - - [01/May/2026 16:42:29] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:43:30,115 [INFO] 127.0.0.1 - - [01/May/2026 16:43:30] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:44:31,110 [INFO] 127.0.0.1 - - [01/May/2026 16:44:31] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:45:32,099 [INFO] 127.0.0.1 - - [01/May/2026 16:45:32] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:46:33,109 [INFO] 127.0.0.1 - - [01/May/2026 16:46:33] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:47:34,120 [INFO] 127.0.0.1 - - [01/May/2026 16:47:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:48:34,097 [INFO] 127.0.0.1 - - [01/May/2026 16:48:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:49:34,106 [INFO] 127.0.0.1 - - [01/May/2026 16:49:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:50:34,121 [INFO] 127.0.0.1 - - [01/May/2026 16:50:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:51:34,100 [INFO] 127.0.0.1 - - [01/May/2026 16:51:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:52:34,105 [INFO] 127.0.0.1 - - [01/May/2026 16:52:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:53:34,096 [INFO] 127.0.0.1 - - [01/May/2026 16:53:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:54:34,100 [INFO] 127.0.0.1 - - [01/May/2026 16:54:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:55:34,121 [INFO] 127.0.0.1 - - [01/May/2026 16:55:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:56:34,095 [INFO] 127.0.0.1 - - [01/May/2026 16:56:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:57:11,946 [INFO] 127.0.0.1 - - [01/May/2026 16:57:11] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:57:25,104 [INFO] 127.0.0.1 - - [01/May/2026 16:57:25] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:57:40,107 [INFO] 127.0.0.1 - - [01/May/2026 16:57:40] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:57:55,103 [INFO] 127.0.0.1 - - [01/May/2026 16:57:55] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:58:10,106 [INFO] 127.0.0.1 - - [01/May/2026 16:58:10] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:58:34,099 [INFO] 127.0.0.1 - - [01/May/2026 16:58:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 16:59:34,129 [INFO] 127.0.0.1 - - [01/May/2026 16:59:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:00:34,111 [INFO] 127.0.0.1 - - [01/May/2026 17:00:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:01:34,109 [INFO] 127.0.0.1 - - [01/May/2026 17:01:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:02:34,101 [INFO] 127.0.0.1 - - [01/May/2026 17:02:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:03:34,097 [INFO] 127.0.0.1 - - [01/May/2026 17:03:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:04:34,098 [INFO] 127.0.0.1 - - [01/May/2026 17:04:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:05:34,101 [INFO] 127.0.0.1 - - [01/May/2026 17:05:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:06:34,102 [INFO] 127.0.0.1 - - [01/May/2026 17:06:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:07:34,112 [INFO] 127.0.0.1 - - [01/May/2026 17:07:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:08:34,109 [INFO] 127.0.0.1 - - [01/May/2026 17:08:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:09:34,112 [INFO] 127.0.0.1 - - [01/May/2026 17:09:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:10:34,112 [INFO] 127.0.0.1 - - [01/May/2026 17:10:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:11:34,100 [INFO] 127.0.0.1 - - [01/May/2026 17:11:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:12:34,099 [INFO] 127.0.0.1 - - [01/May/2026 17:12:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:13:34,101 [INFO] 127.0.0.1 - - [01/May/2026 17:13:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:14:34,121 [INFO] 127.0.0.1 - - [01/May/2026 17:14:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:15:34,104 [INFO] 127.0.0.1 - - [01/May/2026 17:15:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:16:34,100 [INFO] 127.0.0.1 - - [01/May/2026 17:16:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:17:34,104 [INFO] 127.0.0.1 - - [01/May/2026 17:17:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:18:34,104 [INFO] 127.0.0.1 - - [01/May/2026 17:18:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:18:51,265 [INFO] Starting RoadSense AI on port 5000 …
+2026-05-01 17:18:51,292 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.16.18.140:5000
+2026-05-01 17:18:51,292 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-01 17:19:00,652 [INFO] 127.0.0.1 - - [01/May/2026 17:19:00] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:19:02,667 [INFO] 127.0.0.1 - - [01/May/2026 17:19:02] "GET / HTTP/1.1" 200 -
+2026-05-01 17:19:02,978 [INFO] 127.0.0.1 - - [01/May/2026 17:19:02] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:19:17,986 [INFO] 127.0.0.1 - - [01/May/2026 17:19:17] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:19:32,982 [INFO] 127.0.0.1 - - [01/May/2026 17:19:32] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:19:47,988 [INFO] 127.0.0.1 - - [01/May/2026 17:19:47] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:19:51,001 [INFO] Loading YOLOv8 model from best.pt …
+2026-05-01 17:19:51,207 [INFO] YOLOv8 model loaded.
+2026-05-01 17:19:51,776 [WARNING] LLM call failed: 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-01 17:19:51,803 [INFO] Processed: pothole.png | Defects: 1 | Priority: MEDIUM | GPS: 10.955073,78.750836
+2026-05-01 17:19:51,805 [INFO] 127.0.0.1 - - [01/May/2026 17:19:51] "POST /predict HTTP/1.1" 200 -
+2026-05-01 17:20:02,980 [INFO] 127.0.0.1 - - [01/May/2026 17:20:02] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:20:17,987 [INFO] 127.0.0.1 - - [01/May/2026 17:20:17] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:20:32,986 [INFO] 127.0.0.1 - - [01/May/2026 17:20:32] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:20:48,103 [INFO] 127.0.0.1 - - [01/May/2026 17:20:48] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:21:03,104 [INFO] 127.0.0.1 - - [01/May/2026 17:21:03] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:21:18,109 [INFO] 127.0.0.1 - - [01/May/2026 17:21:18] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:21:33,110 [INFO] 127.0.0.1 - - [01/May/2026 17:21:33] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:21:48,105 [INFO] 127.0.0.1 - - [01/May/2026 17:21:48] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:22:34,105 [INFO] 127.0.0.1 - - [01/May/2026 17:22:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:23:34,112 [INFO] 127.0.0.1 - - [01/May/2026 17:23:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:24:34,105 [INFO] 127.0.0.1 - - [01/May/2026 17:24:34] "GET /health HTTP/1.1" 200 -
+2026-05-01 17:25:34,220 [INFO] 127.0.0.1 - - [01/May/2026 17:25:34] "GET /health HTTP/1.1" 200 -

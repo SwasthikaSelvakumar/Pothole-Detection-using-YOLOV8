@@ -1,0 +1,28 @@
+[
+  {
+    "timestamp": "2026-05-01T11:49:51.781423Z",
+    "image": "pothole.png",
+    "detections": [
+      {
+        "class": "crack",
+        "confidence": 0.9012,
+        "risk": "MEDIUM",
+        "size": "MEDIUM",
+        "bbox": [
+          90,
+          0,
+          170,
+          33
+        ]
+      }
+    ],
+    "severity_score": 4,
+    "explanation": "Detected 1 road defect(s). Immediate inspection recommended.",
+    "action": "Schedule routine inspection.",
+    "priority": "MEDIUM",
+    "gps": {
+      "lat": 10.955073,
+      "lng": 78.750836
+    }
+  }
+]
