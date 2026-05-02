@@ -1,0 +1,19 @@
+### Health Check
+GET http://localhost:5000/health
+
+### Classes
+GET http://localhost:5000/classes
+
+### GPU Info
+GET http://localhost:5000/gpu
+
+### Predict
+POST http://localhost:5000/predict
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="image"; filename="pothole.jpg"
+Content-Type: image/jpeg
+
+< ./pothole.jpg
+--boundary--

@@ -186,3 +186,50 @@ FileNotFoundError: [Errno 2] No such file or directory: 'best.pt'
 2026-05-01 17:23:34,112 [INFO] 127.0.0.1 - - [01/May/2026 17:23:34] "GET /health HTTP/1.1" 200 -
 2026-05-01 17:24:34,105 [INFO] 127.0.0.1 - - [01/May/2026 17:24:34] "GET /health HTTP/1.1" 200 -
 2026-05-01 17:25:34,220 [INFO] 127.0.0.1 - - [01/May/2026 17:25:34] "GET /health HTTP/1.1" 200 -
+2026-05-02 21:40:51,549 [INFO] RoadSense AI v2.0 starting on port 5000
+2026-05-02 21:40:51,549 [INFO] CUDA available: False | Device: cpu | FP16: False
+2026-05-02 22:21:06,886 [INFO] RoadSense AI v2.0 starting on port 5000
+2026-05-02 22:21:06,887 [INFO] CUDA available: False | Device: cpu | FP16: False
+2026-05-02 22:22:13,637 [INFO] Loading YOLOv8m on cpu ...
+2026-05-02 22:22:13,879 [INFO] Model loaded on cpu (FP16=False)
+2026-05-02 22:22:14,624 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:22:14,627 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:22:14,636 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:22:14,797 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:22:14,804 [INFO] Processed: pothole.png | Defects: 1 | Priority: MEDIUM | Inference: 539.0ms | LLM: 382.6ms | Device: cpu
+2026-05-02 22:27:07,948 [INFO] RoadSense AI v2.0 starting on port 5000
+2026-05-02 22:27:07,949 [INFO] CUDA available: False | Device: cpu | FP16: False
+2026-05-02 22:30:40,715 [INFO] RoadSense AI v2.0 starting on port 5000
+2026-05-02 22:30:40,717 [INFO] CUDA available: False | Device: cpu | FP16: False
+2026-05-02 22:31:02,256 [INFO] Loading YOLOv8m on cpu ...
+2026-05-02 22:31:02,432 [INFO] Model loaded on cpu (FP16=False)
+2026-05-02 22:31:03,042 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:31:03,079 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:31:03,119 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:31:03,356 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:31:03,361 [INFO] Processed: pothole.jpg | Defects: 1 | Priority: MEDIUM | Inference: 404.9ms | LLM: 520.0ms | Device: cpu
+2026-05-02 22:33:26,790 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:33:26,793 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:33:26,813 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:33:26,950 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:33:26,956 [INFO] Processed: pothole.png | Defects: 1 | Priority: MEDIUM | Inference: 195.4ms | LLM: 297.9ms | Device: cpu
+2026-05-02 22:36:08,846 [INFO] RoadSense AI v2.0 starting on port 5000
+2026-05-02 22:36:08,847 [INFO] CUDA available: False | Device: cpu | FP16: False
+2026-05-02 22:36:52,706 [INFO] RoadSense AI v2.0 starting on port 5000
+2026-05-02 22:36:52,706 [INFO] CUDA available: False | Device: cpu | FP16: False
+2026-05-02 22:37:18,086 [INFO] Loading YOLOv8m on cpu ...
+2026-05-02 22:37:18,191 [INFO] Model loaded on cpu (FP16=False)
+2026-05-02 22:37:18,651 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:37:18,657 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:37:18,668 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:37:18,850 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:37:18,857 [INFO] Processed: pothole.png | Defects: 1 | Priority: MEDIUM | Inference: 275.6ms | LLM: 391.2ms | Device: cpu
+2026-05-02 22:40:56,630 [INFO] RoadSense AI v2.0 starting on port 5000
+2026-05-02 22:40:56,631 [INFO] CUDA available: False | Device: cpu | FP16: False
+2026-05-02 22:41:11,987 [INFO] Loading YOLOv8m on cpu ...
+2026-05-02 22:41:12,177 [INFO] Model loaded on cpu (FP16=False)
+2026-05-02 22:41:12,553 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:41:12,565 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:41:12,587 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:41:12,728 [WARNING] Groq call failed: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions
+2026-05-02 22:41:12,734 [INFO] Processed: pothole.png | Defects: 1 | Priority: MEDIUM | Inference: 247.0ms | LLM: 309.7ms | Device: cpu
