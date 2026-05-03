@@ -304,7 +304,7 @@ This project is submitted to **Software Impacts (Elsevier)** journal.
 
 **Title:** RoadSense AI: A CUDA-Accelerated Intelligent Road Defect Detection System with Multi-Agent LLM Pipeline for Smart City Safety
 
-**Authors:** Swasthika S, Rokith S, P K A Chitra
+**Authors:** Swasthika S
 
 **Institution:** SRM Institute of Science and Technology, Tiruchirappalli
 
@@ -326,5 +326,5 @@ MIT License — Original YOLOv8 pothole detection base by [HussainM899](https://
 ---
 
 <div align="center">
-Made with ❤️ for SDG 3 & SDG 11 | SRM Institute of Science and Technology
+Made with ❤️ for SDG 3 & SDG 11 
 </div>
